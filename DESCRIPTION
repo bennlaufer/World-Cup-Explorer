@@ -1,11 +1,10 @@
 Package: rpack
 Type: Package
-Title: Provides Information on All Past World Cups 
+Title: Provides Information on All Past World Cups (Excluding 2018 and 2022)
 Version: 0.1.0
 Author: Ben Laufer, Nils Berzins, Ryuhei Shida
 Maintainer: The package maintainer <yourself@somewhere.net>
-Description: This package uses World Cup Data found from Kaggle (https://www.kaggle.com/datasets/abecklas/fifa-world-cup).
-A variety of functions have been produced to provide users of this package a breadth of options on how to analyze World Cup data. 
+Description: This package uses World Cup Data found from Kaggle (https://www.kaggle.com/datasets/abecklas/fifa-world-cup).A variety of functions have been produced to provide users of this package a breadth of options on how to analyze World Cup data. 
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
