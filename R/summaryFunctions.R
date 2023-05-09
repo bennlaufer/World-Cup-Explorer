@@ -2,7 +2,7 @@
 #' Returns which team won the world cup given year input
 #'
 #' @return A string
-#'
+#' @param year The year of the world cup
 #' @export
 
 winningTeam <- function(year){
