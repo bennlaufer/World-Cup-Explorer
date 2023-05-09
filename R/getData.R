@@ -44,7 +44,7 @@ getPlayers <- function() {
   WCList <- tidyWorldCup()
   players <- WCList[[2]]
 
-  return(matches)
+  return(players)
 
 }
 
@@ -58,6 +58,6 @@ getSummarised <- function() {
   WCList <- tidyWorldCup()
   summarised <- WCList[[3]]
 
-  return(matches)
+  return(summarised)
 
 }
