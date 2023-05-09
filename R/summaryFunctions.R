@@ -2,7 +2,7 @@
 #' Returns which team won the world cup given year input
 #'
 #' @return A string
-#'
+#' @param year The year of the world cup
 #' @export
 
 winningTeam <- function(year){
@@ -23,7 +23,7 @@ winningTeam <- function(year){
 #' Returns the years won for a given country input
 #'
 #' @return dataframe of numeric values
-#'
+#' @param country A country at the world cup
 #' @export
 
 yearsWon <- function(country){
@@ -45,7 +45,7 @@ yearsWon <- function(country){
 #' Returns the information for a given player name
 #'
 #' @return dataframe with numeric/char information about player
-#'
+#' @param name A player at the world cup
 #' @export
 
 getPlayerInfo <- function(name){
