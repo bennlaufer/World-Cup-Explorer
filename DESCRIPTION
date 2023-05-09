@@ -1,11 +1,11 @@
 Package: rpack
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Provides Information on All Past World Cups 
 Version: 0.1.0
-Author: Who wrote it
+Author: Ben Laufer, Nils Berzins
 Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Description: This package uses World Cup Data found from Kaggle (https://www.kaggle.com/datasets/abecklas/fifa-world-cup).
+A variety of functions have been produced to provide users of this package a breadth of options on how to analyze World Cup data. 
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
