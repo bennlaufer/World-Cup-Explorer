@@ -45,7 +45,7 @@ yearsWon <- function(country){
 #' Returns the information for a given player name
 #'
 #' @return dataframe with numeric/char information about player
-#'
+#' @param name A player at the world cup
 #' @export
 
 getPlayerInfo <- function(name){
