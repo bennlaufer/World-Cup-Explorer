@@ -23,7 +23,7 @@ winningTeam <- function(year){
 #' Returns the years won for a given country input
 #'
 #' @return dataframe of numeric values
-#'
+#' @param country A country at the world cup
 #' @export
 
 yearsWon <- function(country){
