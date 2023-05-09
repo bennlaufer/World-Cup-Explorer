@@ -2,7 +2,7 @@
 % Please edit documentation in R/Functions Temp.R
 \name{tidyWorldCup}
 \alias{tidyWorldCup}
-\title{Produces a tidy dataframe of world cup data for the user}
+\title{Produces a list of tidy data frames of world cup data for the user}
 \usage{
 tidyWorldCup()
 }
@@ -10,5 +10,5 @@ tidyWorldCup()
 A data Frame
 }
 \description{
-Produces a tidy dataframe of world cup data for the user
+Produces a list of tidy data frames of world cup data for the user
 }
