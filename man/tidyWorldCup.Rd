@@ -7,7 +7,7 @@
 tidyWorldCup()
 }
 \value{
-A data Frame
+A list of data frames
 }
 \description{
 Produces a list of tidy data frames of world cup data for the user
