@@ -2,9 +2,31 @@
 #' Returns which team won the world cup given year input
 #'
 #' @return A string
-#'
+#' @param year The year of the world cup
 #' @export
 
+winningTeam <- function(year){
+  if (!is.numeric(year)) {
+    stop("Input variable must be numeric.")
+    warning("Input variable is not numeric.")
+  }
+
+  WCList <- tidyWorldCup()
+  worldCups <- WCLIst[[3]]
+  worldCups <- worldCups %>%
+    filter(Year == year)
+
+  return(worldCups[Country])
+
+}
+
+#' Returns the years won for a given country input
+#'
+#' @return dataframe of numeric values
+#' @param country A country at the world cup
+#' @export
+
+<<<<<<< HEAD
 winningTeam <- function(year){
   if (!is.numeric(year)) {
     stop("Input variable must be numeric.")
@@ -26,6 +48,8 @@ winningTeam <- function(year){
 #'
 #' @export
 
+=======
+>>>>>>> 244814956fad0219d6c9b728fed757fff7b94781
 yearsWon <- function(country){
 
   if (!is.character(country)) {
@@ -45,7 +69,11 @@ yearsWon <- function(country){
 #' Returns the information for a given player name
 #'
 #' @return dataframe with numeric/char information about player
+<<<<<<< HEAD
 #'
+=======
+#' @param name A player at the world cup
+>>>>>>> 244814956fad0219d6c9b728fed757fff7b94781
 #' @export
 
 getPlayerInfo <- function(name){
