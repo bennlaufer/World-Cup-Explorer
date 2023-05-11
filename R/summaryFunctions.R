@@ -15,8 +15,10 @@ winningTeam <- function(year){
     warning("Input variable is not numeric.")
   }
 
+  valid_years <- seq(from = 1930, to = 2014, by = 4)
+
   yearCheck <- year
-    if(yearCheck %% 1 != .5){
+    if(!(yearCheck %in% valid_years)){
       stop("World Cups only occur every 4 years starting at 1930")
     }
 
