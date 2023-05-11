@@ -78,3 +78,42 @@ getPlayerInfo <- function(name){
   return(worldCups)
 
 }
+
+#' Returns the information for a given match in the world cup
+#'
+#'@param id id of the world cup match
+#'
+#'@return string with information about the specific match
+#'
+#' @import dplyr
+#'
+#' @export
+
+getMatchInfo <- function(id) {
+
+  if (!is.numeric(id)) {
+    stop("Input variable must be numeric.")
+    warning("Input variable is not a number.")
+  }
+
+  matches <- getMatches()
+  matches <- matches |>
+    filter(MatchID == id)
+
+  matchInfo <- paste(
+    matches$Home.Team.Name[1], " vs. ", matches$Away.Team.Name[1], "\n",
+
+    "The score was ", matches$Home.Team.Initials[1], " ", matches$Home.Team.Goals[1], " to ",
+
+    matches$Away.Team.Goals[1], matches$Away.Team.Initials[1], "\n",
+
+    "The game was held in ", matches$City, "in the ", matches$Stadium, " stadium on ", matches$Datetime, "\n",
+
+    "The referee this game was ", matches$Referee, " with their assistants ",
+
+    matches$Assistant.1, " and ", matches$Assistant.2
+    )
+
+  return(glue::glue(matchInfo))
+
+}

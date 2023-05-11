@@ -80,3 +80,30 @@ test_that("getPlayerInfo works", {
 
 
 })
+
+test_that("getMatchInfo works", {
+
+  my_result <- getMatchInfo(1096)
+
+  matches <- getMatches()
+  matches <- matches |>
+    filter(MatchID == 1096)
+
+  matchInfo <- paste(
+    matches$Home.Team.Name[1], " vs. ", matches$Away.Team.Name[1], "\n",
+
+    "The score was ", matches$Home.Team.Initials[1], " ", matches$Home.Team.Goals[1], " to ",
+
+    matches$Away.Team.Goals[1], matches$Away.Team.Initials[1], "\n",
+
+    "The game was held in ", matches$City, "in the ", matches$Stadium, " stadium on ", matches$Datetime, "\n",
+
+    "The referee this game was ", matches$Referee, " with their assistants ",
+
+    matches$Assistant.1, " and ", matches$Assistant.2)
+
+  correct_result <- glue::glue(matchInfo)
+
+  expect_equal(my_result, correct_result)
+
+  })
