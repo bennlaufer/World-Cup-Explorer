@@ -48,3 +48,35 @@ test_that("getSummarised works", {
   expect_equal(my_result, correct_result)
 
 })
+
+test_that("winningTeam works", {
+
+  correct_result <- "Germany"
+  my_result <- winningTeam(2014)
+
+  expect_equal(my_result, correct_result)
+
+
+})
+
+test_that("yearsWon works", {
+
+  correct_result <- 2014
+  my_result <- yearsWon("Germany")
+
+  expect_equal(my_result, correct_result)
+
+
+})
+
+test_that("getPlayerInfo works", {
+
+  correct_result <- getPlayers() %>%
+    filter(Player.Name == "MESSI")
+
+  my_result <- getPlayerInfo("MESSI")
+
+  expect_equal(my_result, correct_result)
+
+
+})
