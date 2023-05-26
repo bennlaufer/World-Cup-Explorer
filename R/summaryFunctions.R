@@ -19,7 +19,10 @@ winningTeam <- function(year){
 
   yearCheck <- year
     if(!(yearCheck %in% valid_years)){
-      stop("World Cups only occur every 4 years starting at 1930")
+      stop(
+        paste("World Cups only occur every 4 years starting at 1930.",
+              getClosest(yearCheck, valid_years, "year", "years"))
+      )
     }
 
   worldCups <- getSummarised()
@@ -28,6 +31,33 @@ winningTeam <- function(year){
 
   return(worldCups$Winner)
 
+}
+
+#' Returns the element(s) in a vector that are closest to a value
+#'
+#' @param n The number
+#' @param v The numeric vector
+#' @param sigular The singular unit
+#' @param plural The plural unit
+#'
+#' @return A string
+
+getClosest <- function(n, v, singular, plural) {
+  if (length(v) < 1) {
+    warning("Vector v should not be empty")
+  }
+
+  diffs <- abs(v - n)
+  minimumDiffs <- which(diffs == min(diffs))
+
+  if (length(minimumDiffs) == 1) {
+    message <- paste0("The closest ", singular, " is ", v[minimumDiffs], ".")
+  } else if (length(minimumDiffs) == 2) {
+    message <- paste0("The closest ", plural, " are ", v[minimumDiffs[1]],
+                      " and ", v[minimumDiffs[2]], ".")
+  }
+
+  return(message)
 }
 
 #' Returns the years won for a given country input
