@@ -59,6 +59,13 @@ test_that("winningTeam works", {
 
 })
 
+test_that("getClosest works", {
+  expect_equal("The closest years are 2006 and 2010.",
+               getClosest(2008, c(2006, 2010, 2014), "year", "years"))
+  expect_equal("The closest year is 2010.",
+               getClosest(2009, c(2010, 2014), "year", "years"))
+})
+
 test_that("yearsWon works", {
 
   correct_result <- 2014
