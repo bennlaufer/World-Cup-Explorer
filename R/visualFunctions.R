@@ -5,7 +5,7 @@
 #' @import dplyr
 #'
 #' @export
-#'
+
 getStadiumsInfo <- function(){
 
   dataSummarised <- getSummarised()
@@ -50,7 +50,7 @@ getStadiumsInfo <- function(){
 
 #' Helper function that gets country code
 #'
-#' @return
+#' @return A country code
 #'
 #' @import dplyr
 #' @import countrycode
@@ -79,7 +79,7 @@ getCountryCode <- function(countryname){
 
 #' Helper function that gets country flag
 #'
-#' @return
+#' @return A country flag
 #'
 #' @export
 
@@ -102,7 +102,6 @@ getFlagEmoji <- function(country_code) {
 #' @import countrycode
 #'
 #' @export
-#'
 
 stadiumsMap <- function() {
 
