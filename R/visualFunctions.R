@@ -138,3 +138,37 @@ stadiumsMap <- function() {
   # Display the map
   return(map)
 }
+
+#' Produces plot of matches
+#'
+#' @return a plot
+#'
+#' @import dplyr
+#' @import ggplot2
+#'
+#' @export
+#'
+
+matchClusters <- function() {
+
+  data <- getMatches()
+
+  my_kmeans <- data %>%
+    select(Home.Team.Goals, Away.Team.Goals) %>%
+    kmeans(centers = 6)
+
+  data$clusters <- as.factor(my_kmeans$cluster)
+
+  gg_point <- ggplot(data, aes(
+    x = Home.Team.Goals, y = Away.Team.Goals, color = clusters,
+    tooltip = paste(Datetime, Home.Team.Name, Home.Team.Goals, " - ",
+                    Away.Team.Goals, Away.Team.Name))) +
+    ggiraph::geom_point_interactive(position = "jitter", size = 2) +
+    labs(x = "Home Team Goals", y = "Away Team Goals",
+         title = "World Cup Matches") +
+    theme_minimal() +
+    scale_y_continuous(breaks = scales::pretty_breaks())
+
+  ggiraph::girafe(ggobj = gg_point,
+                  options = list(ggiraph::opts_zoom(min = 1, max = 5)))
+}
