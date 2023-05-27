@@ -19,7 +19,8 @@ test_that("tidyWorldCup works", {
 test_that("getMatches works", {
 
   data_dir <- system.file("extdata","WorldCupMatches.csv", package = "rpack")
-  correct_result <- utils::read.csv(data_dir)
+  matches <- utils::read.csv(data_dir)
+  correct_result <- matches[complete.cases(matches),]
 
   my_result <- getMatches()
 

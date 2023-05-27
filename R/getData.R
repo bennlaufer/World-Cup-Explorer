@@ -29,8 +29,9 @@ getMatches <- function() {
 
   WCList <- tidyWorldCup()
   matches <- WCList[[1]]
+  nonEmptyMatches <- matches[complete.cases(matches),]
 
-  return(matches)
+  return(nonEmptyMatches)
 
 }
 
