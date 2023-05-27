@@ -30,8 +30,9 @@ getMatches <- function() {
   WCList <- tidyWorldCup()
   matches <- WCList[[1]]
   nonEmptyMatches <- matches[complete.cases(matches),]
+  uniqueMatches <- nonEmptyMatches[!duplicated(nonEmptyMatches),]
 
-  return(nonEmptyMatches)
+  return(uniqueMatches)
 
 }
 

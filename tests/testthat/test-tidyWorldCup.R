@@ -20,7 +20,8 @@ test_that("getMatches works", {
 
   data_dir <- system.file("extdata","WorldCupMatches.csv", package = "rpack")
   matches <- utils::read.csv(data_dir)
-  correct_result <- matches[complete.cases(matches),]
+  uniqueMatches <- matches[!duplicated(matches),]
+  correct_result <- uniqueMatches[complete.cases(uniqueMatches),]
 
   my_result <- getMatches()
 
